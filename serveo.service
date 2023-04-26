@@ -1,0 +1,14 @@
+[Unit]
+Description=Serveo Connection
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=3
+ExecStart=ssh -o ServerAliveInterval=60 -o ServerAliveCountMax=10 -R krishnans2006:80:localhost:5000 -R krishnans2006:22:localhost:22 serveo.net
+User=krishnan
+Group=krishnan
+
+[Install]
+WantedBy=multi-user.target
