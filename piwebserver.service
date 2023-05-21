@@ -4,7 +4,6 @@ After=network.target
 
 [Service]
 Type=simple
-Restart=always
 WorkingDirectory=/home/krishnan/PiWebServer
 ExecStart=/home/krishnan/PiWebServer/venv/bin/python /home/krishnan/PiWebServer/main.py
 User=krishnan
