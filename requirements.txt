@@ -1,1 +1,4 @@
 Flask
+Flask-Caching
+Flask-Login
+Flask-WTF
