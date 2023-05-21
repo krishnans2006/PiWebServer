@@ -1,10 +1,11 @@
 [Unit]
 Description=Raspberry Pi Webserver
-After=network.target
+After=network-online.target
 
 [Service]
 Type=simple
 WorkingDirectory=/home/krishnan/PiWebServer
+ExecStartPre=/bin/sh -c 'until host google.com; do sleep 1; done'
 ExecStart=/home/krishnan/PiWebServer/venv/bin/python /home/krishnan/PiWebServer/main.py
 User=krishnan
 Group=krishnan
