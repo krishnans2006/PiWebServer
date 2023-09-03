@@ -7,6 +7,8 @@ Type=simple
 WorkingDirectory=/home/krishnan/PiWebServer
 ExecStartPre=/bin/sh -c 'until host google.com; do sleep 1; done'
 ExecStart=/home/krishnan/PiWebServer/venv/bin/python /home/krishnan/PiWebServer/main.py
+Restart=on-abnormal  # Restart on ExecStartPre timeout
+RestartSec=60  # Wait a minute to restart
 User=krishnan
 Group=krishnan
 
